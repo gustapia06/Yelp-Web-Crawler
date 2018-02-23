@@ -31,7 +31,7 @@ b. If the query was matched with a restaurant, but there are other restaurants t
 c. If the query did not match with any restaurant, but there are some restaurant names that might be slightly similar to, then suggestions of these restaurant will show as a link.
 d. If the query did not match no restaurant names, then the website will inform the user that the search failed.
 
-Note: If the user clicks into a suggestion, the website will present the reviews for that suggested restaurant, and the number of reviews to show are assumed to be the same as the original query.
+**Note:** If the user clicks into a suggestion, the website will present the reviews for that suggested restaurant, and the number of reviews to show are assumed to be the same as the original query.
 If the user want to start over with a new search, there is a link for them to go to the main page.
 
 For production settings, you may need to setup a `wsgi HTTP` server with `gunicorn` and `nginx`.
