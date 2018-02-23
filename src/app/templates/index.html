@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="instructions">
+          <p><b>Instructions:</b><br>
+          Please insert a pizza restaurant name and the number of reviews wanted to be displayed.<br>
+          If many restaurants are similar to the query, the website will present suggestions for the user to select.<br>
+          If the query is not found, the website will alert the user, and if possible, present some suggestions.</p>
+      </div>
+      
+      <hr>
+      <br>
+      <div class="formDisplay">
+          <b>Search for a pizza restaurants in New York City</b>
+          <form class="formInput", action="search" method="POST">
+              Restaurant name:
+              <input type="text" name="searchBox" id="searchBox" size="15">
+              <br>
+              Reviews to show:
+              <select name="numRevs" id="numRevs" style="width: 75px;">
+                  {% for i in range(1,11) %}
+                    <option value="{{i}}">{{i}}</option>
+                  {% endfor %}
+              </select>
+              <br>
+              <input type="submit" value="Submit" name=""submitForm>
+          </form>
+      </div>
+
+<!--      <script src="{{ url_for('static', filename='getForm.js') }}"></script>-->
+{% endblock %}

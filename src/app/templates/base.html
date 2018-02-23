@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Coding Exercise">
+        <meta name="author" content="Gustavo Tapia">
+        
+        <!-- jQuery -->
+<!--        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
+
+        <!-- get script root -->
+        <script type="text/javascript">
+            var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+
+        <title>Yelp review crawler</title>
+    </head>
+
+  <body>
+      <div class="pagetitle">
+          <p>A (very) primitive version of a pizza review aggregator.<br>
+          This is a tool that will show the latest <b>Yelp</b> reviews from <i><b>pizza</b></i> restaurants from <b>New York City</b>.</p>
+      </div>
+      
+      {% block content %}{% endblock %}
+      
+      <hr>
+      
+      <footer>
+          <p>Prepared by Gustavo Tapia</p>
+      </footer>
+  </body>
+</html>
+

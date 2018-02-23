@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+      <hr>
+      {% if result %}
+      <div class="result">
+          <p><b>Name:</b> {{result.name}}<br>
+          <b>Address:</b> {{result.address}}<br>
+          <b>Rating:</b> {{result.rating}}<br>
+          <b>Total Reviews:</b> {{result.reviews}}<br>
+          <b>Yelp page:</b> <a href="{{result.url}}">Here</a><br>
+          </p>
+      </div>
+      <br />
+      <div class="reviews">
+          <b> Latest {{result.disp_reviews}} reviews:</b>
+          <ol>
+              {% for review in reviews %}
+              <li><b>Date:</b> {{review.date}}<br>
+                  <b>Rating:</b> {{review.rating}}<br>
+                  <b>Review:</b> {{review.description}}
+              </li>
+              <br>
+              {% endfor %}
+          <ol>
+      </div>
+      {% else %}
+      <div class="result">
+          <p><b>No results found for <i>{{search_term}}</i></b></p>
+      </div>
+      {% endif %}
+
+      <div class="suggestions">
+      {% if suggestions %}
+          <p>Suggested for your search: <i><b>{{search_term}}</b></i></p>
+          <ul>
+              {% for sug in suggestions %}
+              <li> <a href="{{sug.link}}">{{sug.name}}</a></li>
+              {% endfor %}
+          <ul>
+      {% else %}
+          {% if not result %}
+          <p><b>No suggestions found</b></p>
+          {% endif %}
+      {% endif %}
+      </div>
+
+      <a href="/">New search</a>
+
+{% endblock %}
