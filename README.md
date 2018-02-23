@@ -5,10 +5,10 @@ This is a web tool implemented on **Flask** to crawl the latest review from Pizz
 What you need:
 - python3: `$ sudo apt-get install python3-pip python3-dev build-essential`
 - pip3: Same as before
-- Flask: `$ pip3 install Flask`
-- BeautifulSoup: `$ pip3 install beautifulsoup4`
-- requests: `pip3 install requests`
-- fuzzywuzzy: `pip3 install fuzzywuzzy[speedup]`
+- Flask: `$ sudo pip3 install Flask`
+- BeautifulSoup: `$ sudo pip3 install beautifulsoup4`
+- requests: `$ sudo pip3 install requests`
+- fuzzywuzzy: `$ sudo pip3 install fuzzywuzzy[speedup]`
 
 Once you install all packages, a Yelp API key is needed for access. You should define an environmental variable `TOKEN` with your key:
 ```
